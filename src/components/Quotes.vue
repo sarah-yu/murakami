@@ -39,6 +39,7 @@ export default {
   font-family: 'Lora', serif;
   font-size: 32px;
   line-height: 1.6;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   width: 60%;
   min-height: 400px;
   display: flex;
