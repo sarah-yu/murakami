@@ -30,4 +30,11 @@ export default {
 </script>
 
 <style>
+.quote {
+  font-family: 'Lora', serif;
+  font-size: 32px;
+  line-height: 1.6;
+  margin: 0 auto;
+  width: 60%;
+}
 </style>
