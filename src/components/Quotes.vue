@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import QuotesService from '@/services/QuotesService'
 
 export default {
   name: 'Quotes',
@@ -16,23 +16,14 @@ export default {
     }
   },
 
-  created() {
-    this.fetchQuote()
-  },
-
-  watch: {
-    $route: 'fetchQuote'
+  mounted() {
+    this.getQuotes()
   },
 
   methods: {
-    fetchQuote() {
-      axios
-        .get('http://localhost:3001/api/quotes')
-        .then(res => {
-          console.log(res)
-          this.quote = res.data.text
-        })
-        .catch(err => console.log(err))
+    async getQuotes() {
+      const res = await QuotesService.fetchQuotes()
+      this.quote = res.data.text
     }
   }
 }
