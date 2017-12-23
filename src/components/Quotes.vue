@@ -1,5 +1,5 @@
 <template>
-  <div class="quote">
+  <div class="quote" v-on:click='getQuotes'>
     <p>{{ quote }}</p>
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
     }
   },
 
-  mounted() {
+  created() {
     this.getQuotes()
   },
 
@@ -34,7 +34,7 @@ export default {
   font-family: 'Lora', serif;
   font-size: 32px;
   line-height: 1.6;
-  margin: -40px auto 0 auto;
+  margin: -4n0px auto 0 auto;
   width: 60%;
 }
 </style>
