@@ -20,6 +20,10 @@ export default {
     this.getQuotes()
   },
 
+  watch: {
+    $route: 'getQuotes'
+  },
+
   methods: {
     async getQuotes() {
       const res = await QuotesService.fetchQuotes()
@@ -35,7 +39,26 @@ export default {
   font-family: 'Lora', serif;
   font-size: 32px;
   line-height: 1.6;
-  margin: -40px auto 0 auto;
   width: 60%;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .quote {
+    font-size: 26px;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .quote {
+    font-size: 18px;
+    line-height: 1.8;
+    width: 90%;
+  }
 }
 </style>
