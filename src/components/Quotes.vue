@@ -31,10 +31,11 @@ export default {
 
 <style>
 .quote {
+  cursor: e-resize;
   font-family: 'Lora', serif;
   font-size: 32px;
   line-height: 1.6;
-  margin: -4n0px auto 0 auto;
+  margin: -40px auto 0 auto;
   width: 60%;
 }
 </style>
