@@ -18,4 +18,8 @@ export default {
   text-align: center;
 }
 
+.about p {
+  letter-spacing: 0.75px;
+}
+
 </style>
