@@ -1,8 +1,13 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
-    <!-- <router-link :to="{ name: 'Quotes' }">Home</router-link> -->
-    <!-- <router-link :to="{ name: 'About' }">About</router-link> -->
+    <header>
+      <!-- <img src="./assets/logo.png"> -->
+      <nav>
+        <router-link :to="{ name: 'About' }">
+          <i class="fa fa-circle-thin" aria-hidden="true"></i>
+        </router-link>
+      </nav>
+    </header>
     <main>
       <router-view/>
     </main>
@@ -29,6 +34,7 @@ html {
 }
 
 body {
+  color: #333;
   height: 100%;
   margin: 0 auto;
   padding: 0 20px;
@@ -38,6 +44,20 @@ body {
 
 img {
 	width: 100%;
+}
+
+nav {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+a {
+  color: #333;
+}
+
+a:hover {
+  color: #888;
 }
 
 #app {

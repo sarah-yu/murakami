@@ -1,5 +1,9 @@
 <template>
   <div class="about">
+    <p>words by haruki murakami</p>
+    <router-link :to="{ name: 'Quotes' }">
+      <i class="fa fa-angle-left" aria-hidden="true"></i>
+    </router-link>
   </div>
 </template>
 
@@ -10,4 +14,8 @@ export default {
 </script>
 
 <style>
+.about {
+  text-align: center;
+}
+
 </style>
