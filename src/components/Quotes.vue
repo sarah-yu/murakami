@@ -1,10 +1,11 @@
 <template>
-  <div class="quote" v-on:click='getQuotes'>
+  <div class="quote" v-on:click='fadeOutQuote'>
     <p>{{ quote }}</p>
   </div>
 </template>
 
 <script>
+import $ from 'jquery'
 import QuotesService from '@/services/QuotesService'
 
 export default {
@@ -25,9 +26,22 @@ export default {
   },
 
   methods: {
-    async getQuotes() {
-      const res = await QuotesService.fetchQuotes()
-      this.quote = res.data.text
+    getQuotes() {
+      QuotesService.fetchQuotes()
+        .then(res => {
+          this.quote = res.data.text
+        })
+        .then(() => {
+          $('.quote')
+            .hide()
+            .fadeIn(900)
+        })
+        .catch(err => console.log(err))
+    },
+    fadeOutQuote() {
+      $('.quote').fadeOut(800, () => {
+        this.getQuotes()
+      })
     }
   }
 }
